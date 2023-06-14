@@ -1,0 +1,598 @@
+
+arduino_none_compiled_test:	file format elf32-littlearm
+
+Disassembly of section .init:
+
+00008000 <_init>:
+    8000: 0d c0 a0 e1  	mov	r12, sp
+    8004: f8 df 2d e9  	push	{r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, lr, pc}
+    8008: 04 b0 4c e2  	sub	r11, r12, #4
+
+0000800c <$a>:
+    800c: 28 d0 4b e2  	sub	sp, r11, #40
+    8010: f0 6f 9d e8  	ldm	sp, {r4, r5, r6, r7, r8, r9, r10, r11, sp, lr}
+    8014: 1e ff 2f e1  	bx	lr
+
+Disassembly of section .text:
+
+00008018 <exit>:
+    8018: 10 40 2d e9  	push	{r4, lr}
+    801c: 00 10 a0 e3  	mov	r1, #0
+    8020: 00 40 a0 e1  	mov	r4, r0
+    8024: 42 01 00 eb  	bl	0x8534 <__call_exitprocs> @ imm = #1288
+    8028: 18 30 9f e5  	ldr	r3, [pc, #24]           @ 0x8048 <$d>
+    802c: 00 00 93 e5  	ldr	r0, [r3]
+    8030: 3c 30 90 e5  	ldr	r3, [r0, #60]
+    8034: 00 00 53 e3  	cmp	r3, #0
+    8038: 0f e0 a0 11  	movne	lr, pc
+    803c: 13 ff 2f 11  	bxne	r3
+    8040: 04 00 a0 e1  	mov	r0, r4
+    8044: dc 01 00 eb  	bl	0x87bc <_exit>          @ imm = #1904
+
+00008048 <$d>:
+    8048:	fc 87 00 00	.word	0x000087fc
+
+0000804c <register_fini>:
+    804c: 18 30 9f e5  	ldr	r3, [pc, #24]           @ 0x806c <$d>
+    8050: 00 00 53 e3  	cmp	r3, #0
+    8054: 1e ff 2f 01  	bxeq	lr
+    8058: 10 40 2d e9  	push	{r4, lr}
+    805c: 0c 00 9f e5  	ldr	r0, [pc, #12]           @ 0x8070 <$d+0x4>
+    8060: 81 01 00 eb  	bl	0x866c <atexit>         @ imm = #1540
+    8064: 10 40 bd e8  	pop	{r4, lr}
+    8068: 1e ff 2f e1  	bx	lr
+
+0000806c <$d>:
+    806c:	00 00 00 00	.word	0x00000000
+    8070:	8c 86 00 00	.word	0x0000868c
+
+00008074 <__do_global_dtors_aux>:
+    8074: 10 40 2d e9  	push	{r4, lr}
+    8078: 28 40 9f e5  	ldr	r4, [pc, #40]           @ 0x80a8 <$d>
+    807c: 00 30 d4 e5  	ldrb	r3, [r4]
+    8080: 00 00 53 e3  	cmp	r3, #0
+    8084: 05 00 00 1a  	bne	0x80a0 <__do_global_dtors_aux+0x2c> @ imm = #20
+    8088: 1c 30 9f e5  	ldr	r3, [pc, #28]           @ 0x80ac <$d+0x4>
+    808c: 00 00 53 e3  	cmp	r3, #0
+    8090: 18 00 9f 15  	ldrne	r0, [pc, #24]           @ 0x80b0 <$d+0x8>
+    8094: 00 00 a0 11  	movne	r0, r0
+    8098: 01 30 a0 e3  	mov	r3, #1
+    809c: 00 30 c4 e5  	strb	r3, [r4]
+    80a0: 10 40 bd e8  	pop	{r4, lr}
+    80a4: 1e ff 2f e1  	bx	lr
+
+000080a8 <$d>:
+    80a8:	44 90 01 00	.word	0x00019044
+    80ac:	00 00 00 00	.word	0x00000000
+    80b0:	2c 88 00 00	.word	0x0000882c
+
+000080b4 <frame_dummy>:
+    80b4: 1c 30 9f e5  	ldr	r3, [pc, #28]           @ 0x80d8 <$d>
+    80b8: 00 00 53 e3  	cmp	r3, #0
+    80bc: 1e ff 2f 01  	bxeq	lr
+    80c0: 10 40 2d e9  	push	{r4, lr}
+    80c4: 10 10 9f e5  	ldr	r1, [pc, #16]           @ 0x80dc <$d+0x4>
+    80c8: 10 00 9f e5  	ldr	r0, [pc, #16]           @ 0x80e0 <$d+0x8>
+    80cc: 00 00 a0 e1  	mov	r0, r0
+    80d0: 10 40 bd e8  	pop	{r4, lr}
+    80d4: 1e ff 2f e1  	bx	lr
+
+000080d8 <$d>:
+    80d8:	00 00 00 00	.word	0x00000000
+    80dc:	48 90 01 00	.word	0x00019048
+    80e0:	2c 88 00 00	.word	0x0000882c
+
+000080e4 <_stack_init>:
+    80e4: 00 40 0f e1  	mrs	r4, apsr
+    80e8: 0f 00 14 e3  	tst	r4, #15
+    80ec: 1c 00 00 0a  	beq	0x8164 <_stack_init+0x80> @ imm = #112
+    80f0: 0d 30 a0 e1  	mov	r3, sp
+    80f4: d1 10 a0 e3  	mov	r1, #209
+    80f8: 01 f0 21 e1  	msr	CPSR_c, r1
+    80fc: 03 d0 a0 e1  	mov	sp, r3
+    8100: 01 aa 4d e2  	sub	r10, sp, #4096
+    8104: 0a 30 a0 e1  	mov	r3, r10
+    8108: d7 10 a0 e3  	mov	r1, #215
+    810c: 01 f0 21 e1  	msr	CPSR_c, r1
+    8110: 03 d0 a0 e1  	mov	sp, r3
+    8114: 01 3a 43 e2  	sub	r3, r3, #4096
+    8118: db 10 a0 e3  	mov	r1, #219
+    811c: 01 f0 21 e1  	msr	CPSR_c, r1
+    8120: 03 d0 a0 e1  	mov	sp, r3
+    8124: 01 3a 43 e2  	sub	r3, r3, #4096
+    8128: d2 10 a0 e3  	mov	r1, #210
+    812c: 01 f0 21 e1  	msr	CPSR_c, r1
+    8130: 03 d0 a0 e1  	mov	sp, r3
+    8134: 02 3a 43 e2  	sub	r3, r3, #8192
+    8138: d3 10 a0 e3  	mov	r1, #211
+    813c: 01 f0 21 e1  	msr	CPSR_c, r1
+    8140: 03 d0 a0 e1  	mov	sp, r3
+    8144: 02 39 43 e2  	sub	r3, r3, #32768
+    8148: ff 30 c3 e3  	bic	r3, r3, #255
+    814c: ff 3c c3 e3  	bic	r3, r3, #65280
+    8150: df 10 a0 e3  	mov	r1, #223
+    8154: 01 f0 21 e1  	msr	CPSR_c, r1
+    8158: 03 d0 a0 e1  	mov	sp, r3
+    815c: c0 40 84 e3  	orr	r4, r4, #192
+    8160: 04 f0 21 e1  	msr	CPSR_c, r4
+    8164: 01 a8 43 e2  	sub	r10, r3, #65536
+    8168: 1e ff 2f e1  	bx	lr
+
+0000816c <_start>:
+    816c: 94 30 9f e5  	ldr	r3, [pc, #148]          @ 0x8208 <$d+0xc>
+    8170: 00 00 53 e3  	cmp	r3, #0
+    8174: 80 30 9f 05  	ldreq	r3, [pc, #128]          @ 0x81fc <$d>
+    8178: 03 d0 a0 e1  	mov	sp, r3
+    817c: d8 ff ff eb  	bl	0x80e4 <_stack_init>    @ imm = #-160
+    8180: 00 10 b0 e3  	movs	r1, #0
+    8184: 01 b0 a0 e1  	mov	r11, r1
+    8188: 01 70 a0 e1  	mov	r7, r1
+    818c: 78 00 9f e5  	ldr	r0, [pc, #120]          @ 0x820c <$d+0x10>
+    8190: 78 20 9f e5  	ldr	r2, [pc, #120]          @ 0x8210 <$d+0x14>
+    8194: 00 20 52 e0  	subs	r2, r2, r0
+    8198: 9e 00 00 eb  	bl	0x8418 <memset>         @ imm = #632
+    819c: 5c 30 9f e5  	ldr	r3, [pc, #92]           @ 0x8200 <$d+0x4>
+    81a0: 00 00 53 e3  	cmp	r3, #0
+    81a4: 01 00 00 0a  	beq	0x81b0 <_start+0x44>    @ imm = #4
+    81a8: 0f e0 a0 e1  	mov	lr, pc
+    81ac: 03 f0 a0 e1  	mov	pc, r3
+    81b0: 4c 30 9f e5  	ldr	r3, [pc, #76]           @ 0x8204 <$d+0x8>
+    81b4: 00 00 53 e3  	cmp	r3, #0
+    81b8: 01 00 00 0a  	beq	0x81c4 <_start+0x58>    @ imm = #4
+    81bc: 0f e0 a0 e1  	mov	lr, pc
+    81c0: 03 f0 a0 e1  	mov	pc, r3
+    81c4: 00 00 b0 e3  	movs	r0, #0
+    81c8: 00 10 b0 e3  	movs	r1, #0
+    81cc: 00 40 b0 e1  	movs	r4, r0
+    81d0: 01 50 b0 e1  	movs	r5, r1
+    81d4: 38 00 9f e5  	ldr	r0, [pc, #56]           @ 0x8214 <$d+0x18>
+    81d8: 00 00 50 e3  	cmp	r0, #0
+    81dc: 01 00 00 0a  	beq	0x81e8 <_start+0x7c>    @ imm = #4
+    81e0: 30 00 9f e5  	ldr	r0, [pc, #48]           @ 0x8218 <$d+0x1c>
+    81e4: 20 01 00 eb  	bl	0x866c <atexit>         @ imm = #1152
+    81e8: 68 00 00 eb  	bl	0x8390 <__libc_init_array> @ imm = #416
+    81ec: 04 00 b0 e1  	movs	r0, r4
+    81f0: 05 10 b0 e1  	movs	r1, r5
+    81f4: 40 00 00 eb  	bl	0x82fc <main>           @ imm = #256
+    81f8: 86 ff ff eb  	bl	0x8018 <exit>           @ imm = #-488
+
+000081fc <$d>:
+    81fc:	00 00 08 00	.word	0x00080000
+    8200:	00 00 00 00	.word	0x00000000
+    8204:	00 00 00 00	.word	0x00000000
+    8208:	00 00 00 00	.word	0x00000000
+    820c:	44 90 01 00	.word	0x00019044
+    8210:	04 92 01 00	.word	0x00019204
+    8214:	6c 86 00 00	.word	0x0000866c
+    8218:	8c 86 00 00	.word	0x0000868c
+
+0000821c <delay>:
+    821c: 04 b0 2d e5  	str	r11, [sp, #-4]!
+    8220: 00 b0 8d e2  	add	r11, sp, #0
+    8224: 0c d0 4d e2  	sub	sp, sp, #12
+    8228: 08 00 0b e5  	str	r0, [r11, #-8]
+    822c: 08 30 1b e5  	ldr	r3, [r11, #-8]
+    8230: 00 00 53 e3  	cmp	r3, #0
+    8234: 00 d0 8b e2  	add	sp, r11, #0
+    8238: 04 b0 9d e4  	ldr	r11, [sp], #4
+    823c: 1e ff 2f e1  	bx	lr
+
+00008240 <pinMode>:
+    8240: 04 b0 2d e5  	str	r11, [sp, #-4]!
+    8244: 00 b0 8d e2  	add	r11, sp, #0
+    8248: 0c d0 4d e2  	sub	sp, sp, #12
+    824c: 00 30 a0 e1  	mov	r3, r0
+    8250: 01 20 a0 e1  	mov	r2, r1
+    8254: 05 30 4b e5  	strb	r3, [r11, #-5]
+    8258: 02 30 a0 e1  	mov	r3, r2
+    825c: 06 30 4b e5  	strb	r3, [r11, #-6]
+    8260: 05 20 5b e5  	ldrb	r2, [r11, #-5]
+    8264: 2c 10 9f e5  	ldr	r1, [pc, #44]           @ 0x8298 <$d>
+    8268: 02 30 a0 e1  	mov	r3, r2
+    826c: 83 30 a0 e1  	lsl	r3, r3, #1
+    8270: 02 30 83 e0  	add	r3, r3, r2
+    8274: 03 31 a0 e1  	lsl	r3, r3, #2
+    8278: 03 30 81 e0  	add	r3, r1, r3
+    827c: 00 30 93 e5  	ldr	r3, [r3]
+    8280: 06 20 5b e5  	ldrb	r2, [r11, #-6]
+    8284: 00 20 c3 e5  	strb	r2, [r3]
+    8288: 00 00 a0 e1  	mov	r0, r0
+    828c: 00 d0 8b e2  	add	sp, r11, #0
+    8290: 04 b0 9d e4  	ldr	r11, [sp], #4
+    8294: 1e ff 2f e1  	bx	lr
+
+00008298 <$d>:
+    8298:	44 88 01 00	.word	0x00018844
+
+0000829c <digitalWrite>:
+    829c: 04 b0 2d e5  	str	r11, [sp, #-4]!
+    82a0: 00 b0 8d e2  	add	r11, sp, #0
+    82a4: 0c d0 4d e2  	sub	sp, sp, #12
+    82a8: 00 30 a0 e1  	mov	r3, r0
+    82ac: 01 20 a0 e1  	mov	r2, r1
+    82b0: 05 30 4b e5  	strb	r3, [r11, #-5]
+    82b4: 02 30 a0 e1  	mov	r3, r2
+    82b8: 06 30 4b e5  	strb	r3, [r11, #-6]
+    82bc: 05 20 5b e5  	ldrb	r2, [r11, #-5]
+    82c0: 30 10 9f e5  	ldr	r1, [pc, #48]           @ 0x82f8 <$d>
+    82c4: 02 30 a0 e1  	mov	r3, r2
+    82c8: 83 30 a0 e1  	lsl	r3, r3, #1
+    82cc: 02 30 83 e0  	add	r3, r3, r2
+    82d0: 03 31 a0 e1  	lsl	r3, r3, #2
+    82d4: 03 30 81 e0  	add	r3, r1, r3
+    82d8: 04 30 83 e2  	add	r3, r3, #4
+    82dc: 00 30 93 e5  	ldr	r3, [r3]
+    82e0: 06 20 5b e5  	ldrb	r2, [r11, #-6]
+    82e4: 00 20 c3 e5  	strb	r2, [r3]
+    82e8: 00 00 a0 e1  	mov	r0, r0
+    82ec: 00 d0 8b e2  	add	sp, r11, #0
+    82f0: 04 b0 9d e4  	ldr	r11, [sp], #4
+    82f4: 1e ff 2f e1  	bx	lr
+
+000082f8 <$d>:
+    82f8:	44 88 01 00	.word	0x00018844
+
+000082fc <main>:
+    82fc: 00 48 2d e9  	push	{r11, lr}
+    8300: 04 b0 8d e2  	add	r11, sp, #4
+    8304: 01 00 00 eb  	bl	0x8310 <setup>          @ imm = #4
+    8308: 09 00 00 eb  	bl	0x8334 <loop>           @ imm = #36
+    830c: fd ff ff ea  	b	0x8308 <main+0xc>       @ imm = #-12
+
+00008310 <setup>:
+    8310: 00 48 2d e9  	push	{r11, lr}
+    8314: 04 b0 8d e2  	add	r11, sp, #4
+    8318: 01 10 a0 e3  	mov	r1, #1
+    831c: 0d 00 a0 e3  	mov	r0, #13
+    8320: c6 ff ff eb  	bl	0x8240 <pinMode>        @ imm = #-232
+    8324: 00 00 a0 e1  	mov	r0, r0
+    8328: 04 d0 4b e2  	sub	sp, r11, #4
+    832c: 00 48 bd e8  	pop	{r11, lr}
+    8330: 1e ff 2f e1  	bx	lr
+
+00008334 <loop>:
+    8334: 00 48 2d e9  	push	{r11, lr}
+    8338: 04 b0 8d e2  	add	r11, sp, #4
+    833c: 08 d0 4d e2  	sub	sp, sp, #8
+    8340: 01 10 a0 e3  	mov	r1, #1
+    8344: 0d 00 a0 e3  	mov	r0, #13
+    8348: d3 ff ff eb  	bl	0x829c <digitalWrite>   @ imm = #-180
+    834c: 01 10 a0 e3  	mov	r1, #1
+    8350: 0e 00 a0 e3  	mov	r0, #14
+    8354: d0 ff ff eb  	bl	0x829c <digitalWrite>   @ imm = #-192
+    8358: fa 0f a0 e3  	mov	r0, #1000
+    835c: ae ff ff eb  	bl	0x821c <delay>          @ imm = #-328
+    8360: 00 10 a0 e3  	mov	r1, #0
+    8364: 0d 00 a0 e3  	mov	r0, #13
+    8368: cb ff ff eb  	bl	0x829c <digitalWrite>   @ imm = #-212
+    836c: 00 10 a0 e3  	mov	r1, #0
+    8370: 0e 00 a0 e3  	mov	r0, #14
+    8374: c8 ff ff eb  	bl	0x829c <digitalWrite>   @ imm = #-224
+    8378: fa 0f a0 e3  	mov	r0, #1000
+    837c: a6 ff ff eb  	bl	0x821c <delay>          @ imm = #-360
+    8380: 00 00 a0 e1  	mov	r0, r0
+    8384: 04 d0 4b e2  	sub	sp, r11, #4
+    8388: 00 48 bd e8  	pop	{r11, lr}
+    838c: 1e ff 2f e1  	bx	lr
+
+00008390 <__libc_init_array>:
+    8390: 70 40 2d e9  	push	{r4, r5, r6, lr}
+    8394: 6c 60 9f e5  	ldr	r6, [pc, #108]          @ 0x8408 <$d>
+    8398: 6c 50 9f e5  	ldr	r5, [pc, #108]          @ 0x840c <$d+0x4>
+    839c: 05 60 46 e0  	sub	r6, r6, r5
+    83a0: 46 61 b0 e1  	asrs	r6, r6, #2
+    83a4: 07 00 00 0a  	beq	0x83c8 <__libc_init_array+0x38> @ imm = #28
+    83a8: 00 40 a0 e3  	mov	r4, #0
+    83ac: 04 50 45 e2  	sub	r5, r5, #4
+    83b0: 04 30 b5 e5  	ldr	r3, [r5, #4]!
+    83b4: 01 40 84 e2  	add	r4, r4, #1
+    83b8: 0f e0 a0 e1  	mov	lr, pc
+    83bc: 13 ff 2f e1  	bx	r3
+    83c0: 04 00 56 e1  	cmp	r6, r4
+    83c4: f9 ff ff 1a  	bne	0x83b0 <__libc_init_array+0x20> @ imm = #-28
+    83c8: 40 60 9f e5  	ldr	r6, [pc, #64]           @ 0x8410 <$d+0x8>
+    83cc: 40 50 9f e5  	ldr	r5, [pc, #64]           @ 0x8414 <$d+0xc>
+    83d0: 05 60 46 e0  	sub	r6, r6, r5
+    83d4: 09 ff ff eb  	bl	0x8000 <_init>          @ imm = #-988
+    83d8: 46 61 b0 e1  	asrs	r6, r6, #2
+    83dc: 07 00 00 0a  	beq	0x8400 <__libc_init_array+0x70> @ imm = #28
+    83e0: 00 40 a0 e3  	mov	r4, #0
+    83e4: 04 50 45 e2  	sub	r5, r5, #4
+    83e8: 04 30 b5 e5  	ldr	r3, [r5, #4]!
+    83ec: 01 40 84 e2  	add	r4, r4, #1
+    83f0: 0f e0 a0 e1  	mov	lr, pc
+    83f4: 13 ff 2f e1  	bx	r3
+    83f8: 04 00 56 e1  	cmp	r6, r4
+    83fc: f9 ff ff 1a  	bne	0x83e8 <__libc_init_array+0x58> @ imm = #-28
+    8400: 70 40 bd e8  	pop	{r4, r5, r6, lr}
+    8404: 1e ff 2f e1  	bx	lr
+
+00008408 <$d>:
+    8408:	30 88 01 00	.word	0x00018830
+    840c:	30 88 01 00	.word	0x00018830
+    8410:	38 88 01 00	.word	0x00018838
+    8414:	30 88 01 00	.word	0x00018830
+
+00008418 <memset>:
+    8418: 03 00 10 e3  	tst	r0, #3
+    841c: 40 00 00 0a  	beq	0x8524 <memset+0x10c>   @ imm = #256
+    8420: 00 00 52 e3  	cmp	r2, #0
+    8424: 01 20 42 e2  	sub	r2, r2, #1
+    8428: 1e ff 2f 01  	bxeq	lr
+    842c: 00 30 a0 e1  	mov	r3, r0
+    8430: ff c0 01 e2  	and	r12, r1, #255
+    8434: 02 00 00 ea  	b	0x8444 <memset+0x2c>    @ imm = #8
+    8438: 01 20 42 e2  	sub	r2, r2, #1
+    843c: 01 00 72 e3  	cmn	r2, #1
+    8440: 1e ff 2f 01  	bxeq	lr
+    8444: 01 c0 c3 e4  	strb	r12, [r3], #1
+    8448: 03 00 13 e3  	tst	r3, #3
+    844c: f9 ff ff 1a  	bne	0x8438 <memset+0x20>    @ imm = #-28
+    8450: 03 00 52 e3  	cmp	r2, #3
+    8454: 28 00 00 9a  	bls	0x84fc <memset+0xe4>    @ imm = #160
+    8458: 30 40 2d e9  	push	{r4, r5, lr}
+    845c: ff e0 01 e2  	and	lr, r1, #255
+    8460: 0e e4 8e e1  	orr	lr, lr, lr, lsl #8
+    8464: 0f 00 52 e3  	cmp	r2, #15
+    8468: 0e e8 8e e1  	orr	lr, lr, lr, lsl #16
+    846c: 2e 00 00 9a  	bls	0x852c <memset+0x114>   @ imm = #184
+    8470: 10 c0 42 e2  	sub	r12, r2, #16
+    8474: 0f 40 cc e3  	bic	r4, r12, #15
+    8478: 20 50 83 e2  	add	r5, r3, #32
+    847c: 04 50 85 e0  	add	r5, r5, r4
+    8480: 2c 42 a0 e1  	lsr	r4, r12, #4
+    8484: 10 c0 83 e2  	add	r12, r3, #16
+    8488: 10 e0 0c e5  	str	lr, [r12, #-16]
+    848c: 0c e0 0c e5  	str	lr, [r12, #-12]
+    8490: 08 e0 0c e5  	str	lr, [r12, #-8]
+    8494: 04 e0 0c e5  	str	lr, [r12, #-4]
+    8498: 10 c0 8c e2  	add	r12, r12, #16
+    849c: 05 00 5c e1  	cmp	r12, r5
+    84a0: f8 ff ff 1a  	bne	0x8488 <memset+0x70>    @ imm = #-32
+    84a4: 01 c0 84 e2  	add	r12, r4, #1
+    84a8: 0c 00 12 e3  	tst	r2, #12
+    84ac: 0c c2 83 e0  	add	r12, r3, r12, lsl #4
+    84b0: 0f 20 02 e2  	and	r2, r2, #15
+    84b4: 18 00 00 0a  	beq	0x851c <memset+0x104>   @ imm = #96
+    84b8: 04 30 42 e2  	sub	r3, r2, #4
+    84bc: 03 30 c3 e3  	bic	r3, r3, #3
+    84c0: 04 30 83 e2  	add	r3, r3, #4
+    84c4: 03 30 8c e0  	add	r3, r12, r3
+    84c8: 04 e0 8c e4  	str	lr, [r12], #4
+    84cc: 0c 00 53 e1  	cmp	r3, r12
+    84d0: fc ff ff 1a  	bne	0x84c8 <memset+0xb0>    @ imm = #-16
+    84d4: 03 20 02 e2  	and	r2, r2, #3
+    84d8: 00 00 52 e3  	cmp	r2, #0
+    84dc: 04 00 00 0a  	beq	0x84f4 <memset+0xdc>    @ imm = #16
+    84e0: ff 10 01 e2  	and	r1, r1, #255
+    84e4: 02 20 83 e0  	add	r2, r3, r2
+    84e8: 01 10 c3 e4  	strb	r1, [r3], #1
+    84ec: 03 00 52 e1  	cmp	r2, r3
+    84f0: fc ff ff 1a  	bne	0x84e8 <memset+0xd0>    @ imm = #-16
+    84f4: 30 40 bd e8  	pop	{r4, r5, lr}
+    84f8: 1e ff 2f e1  	bx	lr
+    84fc: 00 00 52 e3  	cmp	r2, #0
+    8500: 1e ff 2f 01  	bxeq	lr
+    8504: ff 10 01 e2  	and	r1, r1, #255
+    8508: 02 20 83 e0  	add	r2, r3, r2
+    850c: 01 10 c3 e4  	strb	r1, [r3], #1
+    8510: 03 00 52 e1  	cmp	r2, r3
+    8514: fc ff ff 1a  	bne	0x850c <memset+0xf4>    @ imm = #-16
+    8518: 1e ff 2f e1  	bx	lr
+    851c: 0c 30 a0 e1  	mov	r3, r12
+    8520: ec ff ff ea  	b	0x84d8 <memset+0xc0>    @ imm = #-80
+    8524: 00 30 a0 e1  	mov	r3, r0
+    8528: c8 ff ff ea  	b	0x8450 <memset+0x38>    @ imm = #-224
+    852c: 03 c0 a0 e1  	mov	r12, r3
+    8530: e0 ff ff ea  	b	0x84b8 <memset+0xa0>    @ imm = #-128
+
+00008534 <__call_exitprocs>:
+    8534: f0 4f 2d e9  	push	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
+    8538: 00 b0 a0 e1  	mov	r11, r0
+    853c: 20 31 9f e5  	ldr	r3, [pc, #288]          @ 0x8664 <$d>
+    8540: 0c d0 4d e2  	sub	sp, sp, #12
+    8544: 00 00 93 e5  	ldr	r0, [r3]
+    8548: 01 70 a0 e1  	mov	r7, r1
+    854c: 04 b0 8d e5  	str	r11, [sp, #4]
+    8550: 63 00 00 eb  	bl	0x86e4 <__retarget_lock_acquire_recursive> @ imm = #396
+    8554: 0c 31 9f e5  	ldr	r3, [pc, #268]          @ 0x8668 <$d+0x4>
+    8558: 00 80 93 e5  	ldr	r8, [r3]
+    855c: 48 61 98 e5  	ldr	r6, [r8, #328]
+    8560: 00 00 56 e3  	cmp	r6, #0
+    8564: 28 00 00 0a  	beq	0x860c <__call_exitprocs+0xd8> @ imm = #160
+    8568: 01 90 a0 e3  	mov	r9, #1
+    856c: 00 a0 a0 e3  	mov	r10, #0
+    8570: 04 40 96 e5  	ldr	r4, [r6, #4]
+    8574: 01 50 54 e2  	subs	r5, r4, #1
+    8578: 23 00 00 4a  	bmi	0x860c <__call_exitprocs+0xd8> @ imm = #140
+    857c: 01 40 84 e2  	add	r4, r4, #1
+    8580: 04 41 86 e0  	add	r4, r6, r4, lsl #2
+    8584: 03 00 00 ea  	b	0x8598 <__call_exitprocs+0x64> @ imm = #12
+    8588: 01 50 45 e2  	sub	r5, r5, #1
+    858c: 01 00 75 e3  	cmn	r5, #1
+    8590: 04 40 44 e2  	sub	r4, r4, #4
+    8594: 1c 00 00 0a  	beq	0x860c <__call_exitprocs+0xd8> @ imm = #112
+    8598: 00 00 57 e3  	cmp	r7, #0
+    859c: 02 00 00 0a  	beq	0x85ac <__call_exitprocs+0x78> @ imm = #8
+    85a0: 00 31 94 e5  	ldr	r3, [r4, #256]
+    85a4: 07 00 53 e1  	cmp	r3, r7
+    85a8: f6 ff ff 1a  	bne	0x8588 <__call_exitprocs+0x54> @ imm = #-40
+    85ac: 04 30 96 e5  	ldr	r3, [r6, #4]
+    85b0: 00 20 94 e5  	ldr	r2, [r4]
+    85b4: 01 30 43 e2  	sub	r3, r3, #1
+    85b8: 05 00 53 e1  	cmp	r3, r5
+    85bc: 04 50 86 05  	streq	r5, [r6, #4]
+    85c0: 00 a0 84 15  	strne	r10, [r4]
+    85c4: 00 00 52 e3  	cmp	r2, #0
+    85c8: ee ff ff 0a  	beq	0x8588 <__call_exitprocs+0x54> @ imm = #-72
+    85cc: 88 31 96 e5  	ldr	r3, [r6, #392]
+    85d0: 19 15 a0 e1  	lsl	r1, r9, r5
+    85d4: 03 00 11 e1  	tst	r1, r3
+    85d8: 04 b0 96 e5  	ldr	r11, [r6, #4]
+    85dc: 10 00 00 1a  	bne	0x8624 <__call_exitprocs+0xf0> @ imm = #64
+    85e0: 0f e0 a0 e1  	mov	lr, pc
+    85e4: 12 ff 2f e1  	bx	r2
+    85e8: 04 20 96 e5  	ldr	r2, [r6, #4]
+    85ec: 0b 00 52 e1  	cmp	r2, r11
+    85f0: 15 00 00 1a  	bne	0x864c <__call_exitprocs+0x118> @ imm = #84
+    85f4: 48 31 98 e5  	ldr	r3, [r8, #328]
+    85f8: 06 00 53 e1  	cmp	r3, r6
+    85fc: e1 ff ff 0a  	beq	0x8588 <__call_exitprocs+0x54> @ imm = #-124
+    8600: 03 60 a0 e1  	mov	r6, r3
+    8604: 00 00 56 e3  	cmp	r6, #0
+    8608: d8 ff ff 1a  	bne	0x8570 <__call_exitprocs+0x3c> @ imm = #-160
+    860c: 50 30 9f e5  	ldr	r3, [pc, #80]           @ 0x8664 <$d>
+    8610: 00 00 93 e5  	ldr	r0, [r3]
+    8614: 38 00 00 eb  	bl	0x86fc <__retarget_lock_release_recursive> @ imm = #224
+    8618: 0c d0 8d e2  	add	sp, sp, #12
+    861c: f0 4f bd e8  	pop	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
+    8620: 1e ff 2f e1  	bx	lr
+    8624: 8c 01 96 e5  	ldr	r0, [r6, #396]
+    8628: 00 00 11 e1  	tst	r1, r0
+    862c: 08 00 00 1a  	bne	0x8654 <__call_exitprocs+0x120> @ imm = #32
+    8630: 04 00 9d e5  	ldr	r0, [sp, #4]
+    8634: 80 10 94 e5  	ldr	r1, [r4, #128]
+    8638: 0f e0 a0 e1  	mov	lr, pc
+    863c: 12 ff 2f e1  	bx	r2
+    8640: 04 20 96 e5  	ldr	r2, [r6, #4]
+    8644: 0b 00 52 e1  	cmp	r2, r11
+    8648: e9 ff ff 0a  	beq	0x85f4 <__call_exitprocs+0xc0> @ imm = #-92
+    864c: 48 61 98 e5  	ldr	r6, [r8, #328]
+    8650: eb ff ff ea  	b	0x8604 <__call_exitprocs+0xd0> @ imm = #-84
+    8654: 80 00 94 e5  	ldr	r0, [r4, #128]
+    8658: 0f e0 a0 e1  	mov	lr, pc
+    865c: 12 ff 2f e1  	bx	r2
+    8660: e0 ff ff ea  	b	0x85e8 <__call_exitprocs+0xb4> @ imm = #-128
+
+00008664 <$d>:
+    8664:	40 90 01 00	.word	0x00019040
+    8668:	fc 87 00 00	.word	0x000087fc
+
+0000866c <atexit>:
+    866c: 00 30 a0 e3  	mov	r3, #0
+    8670: 10 40 2d e9  	push	{r4, lr}
+    8674: 00 10 a0 e1  	mov	r1, r0
+    8678: 03 20 a0 e1  	mov	r2, r3
+    867c: 03 00 a0 e1  	mov	r0, r3
+    8680: 1e 00 00 eb  	bl	0x8700 <__register_exitproc> @ imm = #120
+    8684: 10 40 bd e8  	pop	{r4, lr}
+    8688: 1e ff 2f e1  	bx	lr
+
+0000868c <__libc_fini_array>:
+    868c: 70 40 2d e9  	push	{r4, r5, r6, lr}
+    8690: 30 50 9f e5  	ldr	r5, [pc, #48]           @ 0x86c8 <$d>
+    8694: 30 40 9f e5  	ldr	r4, [pc, #48]           @ 0x86cc <$d+0x4>
+    8698: 04 40 45 e0  	sub	r4, r5, r4
+    869c: 44 41 b0 e1  	asrs	r4, r4, #2
+    86a0: 05 00 00 0a  	beq	0x86bc <__libc_fini_array+0x30> @ imm = #20
+    86a4: 04 30 35 e5  	ldr	r3, [r5, #-4]!
+    86a8: 01 40 44 e2  	sub	r4, r4, #1
+    86ac: 0f e0 a0 e1  	mov	lr, pc
+    86b0: 13 ff 2f e1  	bx	r3
+    86b4: 00 00 54 e3  	cmp	r4, #0
+    86b8: f9 ff ff 1a  	bne	0x86a4 <__libc_fini_array+0x18> @ imm = #-28
+    86bc: 3f 00 00 eb  	bl	0x87c0 <_fini>          @ imm = #252
+    86c0: 70 40 bd e8  	pop	{r4, r5, r6, lr}
+    86c4: 1e ff 2f e1  	bx	lr
+
+000086c8 <$d>:
+    86c8:	3c 88 01 00	.word	0x0001883c
+    86cc:	38 88 01 00	.word	0x00018838
+
+000086d0 <__retarget_lock_init>:
+    86d0: 1e ff 2f e1  	bx	lr
+
+000086d4 <__retarget_lock_init_recursive>:
+    86d4: 1e ff 2f e1  	bx	lr
+
+000086d8 <__retarget_lock_close>:
+    86d8: 1e ff 2f e1  	bx	lr
+
+000086dc <__retarget_lock_close_recursive>:
+    86dc: 1e ff 2f e1  	bx	lr
+
+000086e0 <__retarget_lock_acquire>:
+    86e0: 1e ff 2f e1  	bx	lr
+
+000086e4 <__retarget_lock_acquire_recursive>:
+    86e4: 1e ff 2f e1  	bx	lr
+
+000086e8 <__retarget_lock_try_acquire>:
+    86e8: 01 00 a0 e3  	mov	r0, #1
+    86ec: 1e ff 2f e1  	bx	lr
+
+000086f0 <__retarget_lock_try_acquire_recursive>:
+    86f0: 01 00 a0 e3  	mov	r0, #1
+    86f4: 1e ff 2f e1  	bx	lr
+
+000086f8 <__retarget_lock_release>:
+    86f8: 1e ff 2f e1  	bx	lr
+
+000086fc <__retarget_lock_release_recursive>:
+    86fc: 1e ff 2f e1  	bx	lr
+
+00008700 <__register_exitproc>:
+    8700: f0 41 2d e9  	push	{r4, r5, r6, r7, r8, lr}
+    8704: a8 80 9f e5  	ldr	r8, [pc, #168]          @ 0x87b4 <$d>
+    8708: 00 40 a0 e1  	mov	r4, r0
+    870c: 00 00 98 e5  	ldr	r0, [r8]
+    8710: 03 60 a0 e1  	mov	r6, r3
+    8714: 01 50 a0 e1  	mov	r5, r1
+    8718: 02 70 a0 e1  	mov	r7, r2
+    871c: f0 ff ff eb  	bl	0x86e4 <__retarget_lock_acquire_recursive> @ imm = #-64
+    8720: 90 30 9f e5  	ldr	r3, [pc, #144]          @ 0x87b8 <$d+0x4>
+    8724: 00 30 93 e5  	ldr	r3, [r3]
+    8728: 48 c1 93 e5  	ldr	r12, [r3, #328]
+    872c: 00 00 5c e3  	cmp	r12, #0
+    8730: 53 cf 83 02  	addeq	r12, r3, #332
+    8734: 04 e0 9c e5  	ldr	lr, [r12, #4]
+    8738: 48 c1 83 05  	streq	r12, [r3, #328]
+    873c: 1f 00 5e e3  	cmp	lr, #31
+    8740: 17 00 00 ca  	bgt	0x87a4 <__register_exitproc+0xa4> @ imm = #92
+    8744: 00 00 54 e3  	cmp	r4, #0
+    8748: 08 00 00 1a  	bne	0x8770 <__register_exitproc+0x70> @ imm = #32
+    874c: 01 30 8e e2  	add	r3, lr, #1
+    8750: 02 e0 8e e2  	add	lr, lr, #2
+    8754: 04 30 8c e5  	str	r3, [r12, #4]
+    8758: 00 00 98 e5  	ldr	r0, [r8]
+    875c: 0e 51 8c e7  	str	r5, [r12, lr, lsl #2]
+    8760: e5 ff ff eb  	bl	0x86fc <__retarget_lock_release_recursive> @ imm = #-108
+    8764: 00 00 a0 e3  	mov	r0, #0
+    8768: f0 41 bd e8  	pop	{r4, r5, r6, r7, r8, lr}
+    876c: 1e ff 2f e1  	bx	lr
+    8770: 01 30 a0 e3  	mov	r3, #1
+    8774: 0e 11 8c e0  	add	r1, r12, lr, lsl #2
+    8778: 88 70 81 e5  	str	r7, [r1, #136]
+    877c: 88 21 9c e5  	ldr	r2, [r12, #392]
+    8780: 13 3e a0 e1  	lsl	r3, r3, lr
+    8784: 03 20 82 e1  	orr	r2, r2, r3
+    8788: 88 21 8c e5  	str	r2, [r12, #392]
+    878c: 08 61 81 e5  	str	r6, [r1, #264]
+    8790: 02 00 54 e3  	cmp	r4, #2
+    8794: 8c 21 9c 05  	ldreq	r2, [r12, #396]
+    8798: 03 30 82 01  	orreq	r3, r2, r3
+    879c: 8c 31 8c 05  	streq	r3, [r12, #396]
+    87a0: e9 ff ff ea  	b	0x874c <__register_exitproc+0x4c> @ imm = #-92
+    87a4: 00 00 98 e5  	ldr	r0, [r8]
+    87a8: d3 ff ff eb  	bl	0x86fc <__retarget_lock_release_recursive> @ imm = #-180
+    87ac: 00 00 e0 e3  	mvn	r0, #0
+    87b0: ec ff ff ea  	b	0x8768 <__register_exitproc+0x68> @ imm = #-80
+
+000087b4 <$d>:
+    87b4:	40 90 01 00	.word	0x00019040
+    87b8:	fc 87 00 00	.word	0x000087fc
+
+000087bc <_exit>:
+    87bc: fe ff ff ea  	b	0x87bc <_exit>          @ imm = #-8
+
+Disassembly of section .fini:
+
+000087c0 <_fini>:
+    87c0: 0d c0 a0 e1  	mov	r12, sp
+    87c4: f8 df 2d e9  	push	{r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, lr, pc}
+    87c8: 04 b0 4c e2  	sub	r11, r12, #4
+
+000087cc <$a>:
+    87cc: 28 d0 4b e2  	sub	sp, r11, #40
+    87d0: f0 6f 9d e8  	ldm	sp, {r4, r5, r6, r7, r8, r9, r10, r11, sp, lr}
+    87d4: 1e ff 2f e1  	bx	lr

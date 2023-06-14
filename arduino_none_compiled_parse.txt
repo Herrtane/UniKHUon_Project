@@ -1,0 +1,276 @@
+Header
+======
+Magic:                           7f 45 4c 46 
+Class:                           CLASS32
+Endianness:                      LSB
+Version:                         CURRENT
+OS/ABI:                          SYSTEMV
+ABI Version:                     0
+Machine type:                    ARM
+File type:                       EXECUTABLE
+Object file version:             CURRENT
+Entry Point:                     0x816c
+Program header offset:           0x34
+Section header offset:           42028
+Processor Flag:                  83886592 SOFT_FLOAT EABI_VER5
+Header size:                     52
+Size of program header:          32
+Number of program header:        3
+Size of section header:          40
+Number of section headers:       19
+Section Name Table idx:          18
+
+Sections
+========
+                    NULL           0         0         0         0                                                      
+.init               PROGBITS       8000      18        8000      4.4183    ALLOC EXECINSTR               LOAD           
+.text               PROGBITS       8018      78c       8018      5.69573   ALLOC EXECINSTR               LOAD           
+.fini               PROGBITS       87a4      18        87a4      4.4183    ALLOC EXECINSTR               LOAD           
+.rodata             PROGBITS       87bc      4c        87bc      3.37183   ALLOC                         LOAD           
+.ARM.exidx          ARM_EXIDX      8808      8         8808      2.40564   ALLOC LINK_ORDER              ARM_UNWIND LOAD
+.eh_frame           PROGBITS       8810      4         8810      -0        ALLOC                         LOAD           
+.init_array         INIT_ARRAY     18814     8         8814      1.75      WRITE ALLOC                   LOAD           
+.fini_array         FINI_ARRAY     1881c     4         881c      1.5       WRITE ALLOC                   LOAD           
+.data               PROGBITS       18820     804       8820      2.55505   WRITE ALLOC                   LOAD           
+.persistent         PROGBITS       19024     0         9024      0         WRITE ALLOC                   LOAD           
+.bss                NOBITS         19024     1c0       9024      4.95885   WRITE ALLOC                   LOAD           
+.noinit             NOBITS         191e4     0         0         0         WRITE ALLOC                   LOAD           
+.comment            PROGBITS       0         49        9024      4.66936   MERGE STRINGS                                
+.debug_frame        PROGBITS       0         278       9070      4.0671                                                 
+.ARM.attributes     ARM_ATTRIBUTES 0         26        92e8      4.04657                                                
+.symtab             SYMTAB         0         b50       9310      2.79979                                                
+.strtab             STRTAB         0         524       9e60      4.4557                                                 
+.shstrtab           STRTAB         0         a7        a384      4.13339                                                
+
+Segments
+========
+ARM_UNWIND        r--       8808      8808      8808      8         8         4         
+Sections in this segment :
+	.ARM.exidx
+
+LOAD              r-x       0         0         0         8814      8814      10000     
+Sections in this segment :
+	.init
+	.text
+	.fini
+	.rodata
+	.ARM.exidx
+	.eh_frame
+
+LOAD              rw-       8814      18814     18814     810       9d0       10000     
+Sections in this segment :
+	.init_array
+	.fini_array
+	.data
+	.persistent
+	.bss
+	.noinit
+
+
+Dynamic entries
+===============
+
+Dynamic symbols
+===============
+
+Static symbols
+==============
+                              NOTYPE    LOCAL     0         0         
+                              SECTION   LOCAL     8000      0         
+                              SECTION   LOCAL     8018      0         
+                              SECTION   LOCAL     87a4      0         
+                              SECTION   LOCAL     87bc      0         
+                              SECTION   LOCAL     8808      0         
+                              SECTION   LOCAL     8810      0         
+                              SECTION   LOCAL     18814     0         
+                              SECTION   LOCAL     1881c     0         
+                              SECTION   LOCAL     18820     0         
+                              SECTION   LOCAL     19024     0         
+                              SECTION   LOCAL     19024     0         
+                              SECTION   LOCAL     191e4     0         
+                              SECTION   LOCAL     0         0         
+                              SECTION   LOCAL     0         0         
+                              SECTION   LOCAL     0         0         
+crti.o                        FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     8000      0         
+$a                            NOTYPE    LOCAL     87a4      0         
+crtn.o                        FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     800c      0         
+$a                            NOTYPE    LOCAL     87b0      0         
+exit.c                        FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     8018      0         
+$d                            NOTYPE    LOCAL     8048      0         
+__call_atexit.c               FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     804c      0         
+register_fini                 FUNC      LOCAL     804c      28        
+$d                            NOTYPE    LOCAL     806c      0         
+$d                            NOTYPE    LOCAL     18814     0         
+$a                            NOTYPE    LOCAL     8518      0         
+$d                            NOTYPE    LOCAL     8648      0         
+$d                            NOTYPE    LOCAL     19020     0         
+crtstuff.c                    FILE      LOCAL     0         0         
+$d                            NOTYPE    LOCAL     87bc      0         
+all_implied_fbits             OBJECT    LOCAL     87bc      0         
+                              OBJECT    LOCAL     8810      0         
+$d                            NOTYPE    LOCAL     18820     0         
+$a                            NOTYPE    LOCAL     8074      0         
+__do_global_dtors_aux         FUNC      LOCAL     8074      0         
+$d                            NOTYPE    LOCAL     80a8      0         
+completed.1                   NOTYPE    LOCAL     19024     1         
+$d                            NOTYPE    LOCAL     1881c     0         
+__do_global_dtors_aux_fini_array_entryOBJECT    LOCAL     1881c     0         
+$a                            NOTYPE    LOCAL     80b4      0         
+frame_dummy                   FUNC      LOCAL     80b4      0         
+$d                            NOTYPE    LOCAL     80d8      0         
+object.0                      NOTYPE    LOCAL     19028     18        
+$d                            NOTYPE    LOCAL     18818     0         
+__frame_dummy_init_array_entryOBJECT    LOCAL     18818     0         
+$d                            NOTYPE    LOCAL     19024     0         
+crt0.o                        FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     80e4      0         
+$d                            NOTYPE    LOCAL     8808      0         
+$d                            NOTYPE    LOCAL     81fc      0         
+arduino.c                     FILE      LOCAL     0         0         
+$d                            NOTYPE    LOCAL     19040     0         
+$d                            NOTYPE    LOCAL     18824     0         
+$a                            NOTYPE    LOCAL     821c      0         
+$d                            NOTYPE    LOCAL     8298      0         
+$a                            NOTYPE    LOCAL     829c      0         
+$d                            NOTYPE    LOCAL     82f8      0         
+$a                            NOTYPE    LOCAL     82fc      0         
+user.c                        FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     8310      0         
+impure.c                      FILE      LOCAL     0         0         
+$d                            NOTYPE    LOCAL     18bf0     0         
+impure_data                   OBJECT    LOCAL     18bf8     428       
+$d                            NOTYPE    LOCAL     18bf8     0         
+$d                            NOTYPE    LOCAL     87e0      0         
+init.c                        FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     8374      0         
+$d                            NOTYPE    LOCAL     83ec      0         
+memset.c                      FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     83fc      0         
+atexit.c                      FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     8650      0         
+fini.c                        FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     8670      0         
+$d                            NOTYPE    LOCAL     86ac      0         
+lock.c                        FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     86b4      0         
+$a                            NOTYPE    LOCAL     86b8      0         
+$a                            NOTYPE    LOCAL     86bc      0         
+$a                            NOTYPE    LOCAL     86c0      0         
+$a                            NOTYPE    LOCAL     86c4      0         
+$a                            NOTYPE    LOCAL     86c8      0         
+$a                            NOTYPE    LOCAL     86cc      0         
+$a                            NOTYPE    LOCAL     86d4      0         
+$a                            NOTYPE    LOCAL     86dc      0         
+$a                            NOTYPE    LOCAL     86e0      0         
+$d                            NOTYPE    LOCAL     191c0     0         
+$d                            NOTYPE    LOCAL     191c4     0         
+$d                            NOTYPE    LOCAL     191c8     0         
+$d                            NOTYPE    LOCAL     191cc     0         
+$d                            NOTYPE    LOCAL     191d0     0         
+$d                            NOTYPE    LOCAL     191d4     0         
+$d                            NOTYPE    LOCAL     191d8     0         
+$d                            NOTYPE    LOCAL     191dc     0         
+$d                            NOTYPE    LOCAL     191e0     0         
+__atexit.c                    FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     86e4      0         
+$d                            NOTYPE    LOCAL     8798      0         
+_exit.c                       FILE      LOCAL     0         0         
+$a                            NOTYPE    LOCAL     87a0      0         
+crtstuff.c                    FILE      LOCAL     0         0         
+$d                            NOTYPE    LOCAL     87e4      0         
+all_implied_fbits             OBJECT    LOCAL     87e4      0         
+$d                            NOTYPE    LOCAL     8810      0         
+__FRAME_END__                 OBJECT    LOCAL     8810      0         
+                              FILE      LOCAL     0         0         
+__fini_array_end              NOTYPE    LOCAL     18820     0         
+__fini_array_start            NOTYPE    LOCAL     1881c     0         
+__init_array_end              NOTYPE    LOCAL     1881c     0         
+__preinit_array_end           NOTYPE    LOCAL     18814     0         
+__init_array_start            NOTYPE    LOCAL     18814     0         
+__preinit_array_start         NOTYPE    LOCAL     18814     0         
+PORTD                         OBJECT    GLOBAL    19120     20        
+__lock___atexit_recursive_mutexOBJECT    GLOBAL    191c8     1         
+__lock___arc4random_mutex     OBJECT    GLOBAL    191c0     1         
+__atexit_recursive_mutex      OBJECT    GLOBAL    19020     4         
+__retarget_lock_close         FUNC      GLOBAL    86bc      4         
+_bss_end__                    NOTYPE    GLOBAL    191e4     0         
+loop                          FUNC      GLOBAL    8334      40        
+__bss_start__                 NOTYPE    GLOBAL    19024     0         
+__dso_handle                  OBJECT    GLOBAL    18820     0         
+PORTC                         OBJECT    GLOBAL    19100     20        
+PIND                          OBJECT    GLOBAL    191a0     20        
+digitalWrite                  FUNC      GLOBAL    829c      60        
+pinMode                       FUNC      GLOBAL    8240      5c        
+__lock___env_recursive_mutex  OBJECT    GLOBAL    191d0     1         
+__lock___sinit_recursive_mutexOBJECT    GLOBAL    191dc     1         
+_global_impure_ptr            OBJECT    GLOBAL    87e0      4         
+PINA                          OBJECT    GLOBAL    19140     20        
+__libc_init_array             FUNC      GLOBAL    8374      88        
+_mainCRTStartup               NOTYPE    GLOBAL    816c      0         
+_init                         FUNC      GLOBAL    8000      0         
+__libc_fini_array             FUNC      GLOBAL    8670      44        
+__lock___malloc_recursive_mutexOBJECT    GLOBAL    191d4     1         
+DDRA                          OBJECT    GLOBAL    19040     20        
+DDRC                          OBJECT    GLOBAL    19080     20        
+__retarget_lock_release_recursiveFUNC      GLOBAL    86e0      4         
+__retarget_lock_try_acquire_recursiveFUNC      GLOBAL    86d4      8         
+__bss_end__                   NOTYPE    GLOBAL    191e4     0         
+__call_exitprocs              FUNC      GLOBAL    8518      138       
+_start                        NOTYPE    GLOBAL    816c      0         
+__retarget_lock_try_acquire   FUNC      GLOBAL    86cc      8         
+__register_exitproc           FUNC      GLOBAL    86e4      bc        
+_stack_init                   NOTYPE    WEAK      80e4      0         
+PORTB                         OBJECT    GLOBAL    190e0     20        
+__retarget_lock_close_recursiveFUNC      GLOBAL    86c0      4         
+g_aArduinoDueTable            OBJECT    GLOBAL    18824     3cc       
+__retarget_lock_acquire_recursiveFUNC      GLOBAL    86c8      4         
+__bss_start                   NOTYPE    GLOBAL    19024     0         
+memset                        FUNC      GLOBAL    83fc      11c       
+main                          FUNC      GLOBAL    82fc      14        
+__retarget_lock_init_recursiveFUNC      GLOBAL    86b8      4         
+PINC                          OBJECT    GLOBAL    19180     20        
+__end__                       NOTYPE    GLOBAL    191e4     0         
+__retarget_lock_init          FUNC      GLOBAL    86b4      4         
+delay                         FUNC      GLOBAL    821c      24        
+_fini                         FUNC      GLOBAL    87a4      0         
+atexit                        FUNC      GLOBAL    8650      20        
+_impure_ptr                   OBJECT    GLOBAL    18bf0     4         
+DDRB                          OBJECT    GLOBAL    19060     20        
+DDRD                          OBJECT    GLOBAL    190a0     20        
+setup                         FUNC      GLOBAL    8310      24        
+_edata                        NOTYPE    GLOBAL    19024     0         
+_end                          NOTYPE    GLOBAL    191e4     0         
+__lock___at_quick_exit_mutex  OBJECT    GLOBAL    191c4     1         
+exit                          FUNC      GLOBAL    8018      34        
+PORTA                         OBJECT    GLOBAL    190c0     20        
+__retarget_lock_acquire       FUNC      GLOBAL    86c4      4         
+__retarget_lock_release       FUNC      GLOBAL    86dc      4         
+_exit                         FUNC      GLOBAL    87a0      4         
+__lock___dd_hash_mutex        OBJECT    GLOBAL    191cc     1         
+__lock___tz_mutex             OBJECT    GLOBAL    191e0     1         
+_stack                        NOTYPE    GLOBAL    80000     0         
+__data_start                  NOTYPE    GLOBAL    18820     0         
+PINB                          OBJECT    GLOBAL    19160     20        
+__lock___sfp_recursive_mutex  OBJECT    GLOBAL    191d8     1         
+
+Symbol versions
+===============
+
+Symbol versions definition
+==========================
+
+Symbol version requirement
+==========================
+
+Dynamic relocations
+===================
+
+.plt.got relocations
+====================
+
+
+
