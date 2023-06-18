@@ -29,9 +29,9 @@ Unicorn Engine은 에뮬레이터의 한 종류로, 유명한 에뮬레이터 QE
 
 내부는 다음과 같이 구성됩니다.
 
-<img src="https://github.com/Herrtane/UniKHUon_Project/blob/main/Image/structure2.png"/>
+<img width="512" src="https://github.com/Herrtane/UniKHUon_Project/blob/main/Image/structure2.png"/>
 
-<img src="https://github.com/Herrtane/UniKHUon_Project/blob/main/Image/structure.png"/>
+<img width="512" src="https://github.com/Herrtane/UniKHUon_Project/blob/main/Image/structure.png"/>
 
 총 두개의 메인 스레드가 실행됩니다.
 
