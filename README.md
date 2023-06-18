@@ -22,6 +22,22 @@ Unicorn Engine은 에뮬레이터의 한 종류로, 유명한 에뮬레이터 QE
 
 ## Results
 
+### GUI 구현 결과
+
+<img width="512" src="https://github.com/Herrtane/UniKHUon_Project/blob/main/Image/gui.png"/><br>
+구현결과 입니다.
+
+내부는 다음과 같이 구성됩니다.
+
+<img src="https://github.com/Herrtane/UniKHUon_Project/blob/main/Image/structure2.png"/>
+
+<img src="https://github.com/Herrtane/UniKHUon_Project/blob/main/Image/structure.png"/>
+
+총 두개의 메인 스레드가 실행됩니다.
+
+- Unicorn engine thread: 컴파일 된 바이트 코드를 에뮬레이션.
+- GUI thread: Unicorn engine thread로부터 업데이트 값을 받아 화면에 출력함.
+
 ## Conclusion
 
 ## References
