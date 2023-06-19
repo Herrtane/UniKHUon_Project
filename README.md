@@ -20,7 +20,23 @@ Unicorn Engine은 에뮬레이터의 한 종류로, 유명한 에뮬레이터 QE
 
 이러한 문제점을 해결하고자, 오프라인에서 아두이노의 온전한 동작을 보장하는 에뮬레이터를 만들었습니다.
 
+## Environments
+
+이 프로젝트를 실행시키기 위해서는 아래와 같은 환경이 먼저 구축되어야 합니다.
+
+- python3
+- python3의 Unicorn 라이브러리
+- python3의 Capstone 라이브러리
+- python3의 pyQT5 라이브러리
+
+라이브러리는 pip3 install 명령어를 통해 수행할 수 있습니다.
+
 ## Results
+
+### Unicorn 기반 Arduino 에뮬레이터의 전체 구조도
+
+<img width="512" src="https://github.com/Herrtane/UniKHUon_Project/blob/main/Image/overview.png"/><br>
+프로젝트의 전체적인 구조도입니다. 각 구조에 대한 자세한 설명은 최종보고서를 참고해주시기 바랍니다.
 
 ### GUI 구현 결과
 
@@ -40,4 +56,23 @@ Unicorn Engine은 에뮬레이터의 한 종류로, 유명한 에뮬레이터 QE
 
 ## Conclusion
 
+- 가상화 아두이노 구현을 통해 실제 하드웨어의 제약을 받지 않고 아두이노와 LED, 모터등 다양한 모듈들을 컴퓨터 상에서 GUI로 조작하고 테스트할 수 있도록 하는 것이 최종 목표입니다. 
+- 특히, 향후에는 현재 프로젝트 상에서 임의로 짠 C언어로 된 아두이노 예시 프로그램 외에도, 직접 Arduino IDE로 컴파일한 원본 ELF 파일을 이 프로젝트의 Input Code로 넣어서, 성공적으로 에뮬레이션을 동작시키는 것이 궁극적인 목표입니다.
+- 아두이노 내의 하드웨어를 Unicorn Emulator를 통해 구현할 수 있으므로, GPIO와 같은 하드웨어 종속적인 기능들을 사용할 수 있으며, 이렇게 구현된 기능들은 추후 아두이노를 다루는 수업에서 교육적인 목적으로 사용하거나, 아두이노와 관련된 실험적인 기능을 구현하는 연구 분야에서 응용할 수 있을 것입니다.
+- 경제적, 시간적인 측면에서도 아두이노 하드웨어에 들어가는 비용을 최소화할 수 있기 때문에 기대 효과를 볼 수 있습니다. 그리고 사용자가 직접 하드웨어를 세팅하고 모듈들을 연결해서 사용하는 것에 비해 간편하게 아두이노를 조작할 수 있으므로 시간적인 비용도 줄일 수 있을 것입니다. 
+
 ## References
+
+- Unicorn Engine Documentation : https://www.unicorn-engine.org/docs/tutorial.html
+- 4 Arduino Simulators You Can Use in Your Electronics Projects : https://www.makeuseof.com/arduino-simulators-electronics-projects/
+- ‘AIoT 소프트웨어’ 조진성 교수님 강의자료
+- Arduino Official Information: https://www.arduino.cc/
+- Unicorn Engine Presentation: https://www.unicorn-engine.org/BHUSA2015-unicorn.pdf
+- QEMU Documentation: https://www.qemu.org/docs/master/
+
+## Contact
+
+프로젝트에 대한 궁금한 사항은 아래의 메일로 연락주시면 답변드리겠습니다.
+
+- 이철한 : herrtane@khu.ac.kr
+- 안준섭 : anjs0918@khu.ac.kr
